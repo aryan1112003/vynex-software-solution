@@ -9,6 +9,16 @@ npm install
 npm run dev
 ```
 
+## Deploy to Vercel
+
+Live at https://vynex-software-solution.vercel.app
+
+```bash
+vercel deploy --prod
+```
+
+`vercel.json` sends every route to `index.html` so links like `/about` work on refresh.
+
 ## Deploy to GitHub Pages
 
 ```bash
