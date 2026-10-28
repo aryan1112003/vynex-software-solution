@@ -1,0 +1,281 @@
+/* Phone layout: centre headings, copy, buttons and cards. Lists, timelines, FAQs and forms stay
+   left-aligned for readability but sit centred as blocks. Loaded last so it wins over earlier rules. */
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 44px);
+  }
+  .section {
+    padding: 64px 0;
+  }
+
+  /* ---------- headings ---------- */
+  .num-head,
+  .num-head.center {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 22px;
+  }
+  .num-head > div:first-child {
+    justify-items: center;
+    width: 100%;
+  }
+  .num-head .lead,
+  .section-head .lead,
+  .lead {
+    margin-inline: auto;
+  }
+  .num-eyebrow {
+    justify-content: center;
+  }
+  .section-head {
+    justify-items: center;
+    text-align: center;
+  }
+  .split-line {
+    text-align: center;
+  }
+  .h2 {
+    font-size: clamp(1.9rem, 8.4vw, 2.4rem);
+  }
+
+  /* ---------- home hero ---------- */
+  .hero-copy {
+    text-align: center;
+  }
+  .status-row {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-title {
+    font-size: clamp(2.2rem, 10.5vw, 3rem);
+    line-height: 1.04;
+  }
+  .hero-title .outline {
+    display: block;
+  }
+  .hero-lead {
+    margin-inline: auto;
+  }
+  .hero-ctas {
+    justify-content: center;
+  }
+
+  /* ---------- inner page hero ---------- */
+  .page-hero {
+    text-align: center;
+    gap: 34px;
+  }
+  .page-hero-copy {
+    display: grid;
+    justify-items: center;
+  }
+  .page-hero .lead {
+    margin-inline: auto;
+  }
+  .chips {
+    justify-content: center;
+  }
+  .page-hero-visual {
+    width: 100%;
+  }
+  .float-badge {
+    left: 50%;
+    right: auto;
+    translate: -50% 0;
+    bottom: -18px;
+  }
+
+  /* ---------- stats & chips ---------- */
+  .stat {
+    justify-items: center;
+    text-align: center;
+  }
+  .sf-chip {
+    justify-content: center;
+    text-align: left;
+  }
+
+  /* ---------- cards ---------- */
+  .service-link {
+    align-items: center;
+    text-align: center;
+    min-height: 0;
+  }
+  .service-top {
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 0;
+  }
+  .service-num {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .service-card h3 {
+    margin-top: 20px;
+  }
+  .value-card,
+  .offer-card,
+  .why-tile,
+  .start-card,
+  .around-card,
+  .customer-card,
+  .compare-card,
+  .module,
+  .mini-card,
+  .highlight,
+  .tech-mini-card,
+  .vm-card,
+  .process-card {
+    text-align: center;
+    justify-items: center;
+  }
+  .value-top {
+    width: 100%;
+  }
+  .why-tile .badge-icon,
+  .start-num,
+  .customer-logo,
+  .hl-dot {
+    margin-inline: auto;
+  }
+  .start-card {
+    display: grid;
+  }
+  .around-num {
+    margin-bottom: 12px;
+  }
+  .customer-card .btn {
+    margin-inline: auto;
+  }
+  .why-quote {
+    text-align: center;
+  }
+  .industry-body {
+    text-align: left;
+  }
+
+  /* ---------- split, why, prepare, faq ---------- */
+  .split-copy,
+  .why-grid > div:first-child,
+  .prepare > div:first-child,
+  .faq-side,
+  .how-sticky {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
+  .checklist {
+    justify-self: center;
+    width: fit-content;
+    max-width: 100%;
+    text-align: left;
+  }
+  .why-cta {
+    display: flex;
+    justify-content: center;
+  }
+  .prepare-card {
+    justify-items: center;
+    text-align: center;
+  }
+  .budget-list {
+    justify-content: center;
+  }
+  .faq-contact {
+    justify-items: center;
+  }
+  .faq-list,
+  .faq-q {
+    text-align: left;
+  }
+  .how-photo {
+    width: 100%;
+  }
+  .timeline {
+    text-align: left;
+    width: 100%;
+  }
+
+  /* ---------- technologies & services ---------- */
+  .tech-controls {
+    justify-items: center;
+    text-align: center;
+  }
+  .input.search {
+    max-width: 100%;
+  }
+  .filter-pills,
+  .service-chips,
+  .tech-tags,
+  .logo-row {
+    justify-content: center;
+  }
+  .tech-cat-head {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .replay-foot {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* ---------- contact ---------- */
+  .contact-side > div:first-child {
+    text-align: center;
+  }
+  .office-band-copy {
+    justify-items: center;
+    text-align: center;
+  }
+  .form-card > .h3,
+  .form-card > .muted {
+    text-align: center;
+  }
+  .form-card form > span {
+    justify-self: center;
+  }
+  .budget .filter-pills {
+    justify-content: center;
+  }
+
+  /* ---------- next service, CTA, footer ---------- */
+  .next-service {
+    text-align: center;
+    justify-items: center;
+  }
+  .next-service:hover .next-title {
+    transform: none;
+  }
+  .footer {
+    text-align: center;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .footer-brand {
+    display: grid;
+    justify-items: center;
+  }
+  .footer-brand p {
+    margin-inline: auto;
+  }
+  .footer-logo {
+    margin: 0 auto 14px;
+  }
+  .footer-col {
+    justify-items: center;
+  }
+  .footer-person {
+    justify-items: center;
+  }
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
