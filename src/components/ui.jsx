@@ -77,29 +77,6 @@ export function SectionHead({ eyebrow, title, text, center, children }) {
   )
 }
 
-export function Magnetic({ children, strength = 0.35 }) {
-  const ref = useRef(null)
-  const x = useSpring(0, { stiffness: 200, damping: 15 })
-  const y = useSpring(0, { stiffness: 200, damping: 15 })
-  return (
-    <motion.span
-      ref={ref}
-      style={{ x, y, display: 'inline-block' }}
-      onMouseMove={(e) => {
-        const r = ref.current.getBoundingClientRect()
-        x.set((e.clientX - r.left - r.width / 2) * strength)
-        y.set((e.clientY - r.top - r.height / 2) * strength)
-      }}
-      onMouseLeave={() => {
-        x.set(0)
-        y.set(0)
-      }}
-    >
-      {children}
-    </motion.span>
-  )
-}
-
 export function Button({ to, href, children, variant = 'primary', ...rest }) {
   const cls = 'btn btn-' + variant
   const inner = (
@@ -108,22 +85,24 @@ export function Button({ to, href, children, variant = 'primary', ...rest }) {
       <span className="btn-arrow">→</span>
     </>
   )
+  if (to) {
+    return (
+      <Link to={to} className={cls} {...rest}>
+        {inner}
+      </Link>
+    )
+  }
+  if (href) {
+    return (
+      <a href={href} className={cls} {...rest}>
+        {inner}
+      </a>
+    )
+  }
   return (
-    <Magnetic>
-      {to ? (
-        <Link to={to} className={cls} {...rest}>
-          {inner}
-        </Link>
-      ) : href ? (
-        <a href={href} className={cls} {...rest}>
-          {inner}
-        </a>
-      ) : (
-        <button className={cls} {...rest}>
-          {inner}
-        </button>
-      )}
-    </Magnetic>
+    <button className={cls} {...rest}>
+      {inner}
+    </button>
   )
 }
 
