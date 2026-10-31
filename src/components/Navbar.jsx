@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { nav, services } from '../data.js'
@@ -13,6 +13,24 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [mega, setMega] = useState(false)
   const location = useLocation()
+  const closeTimer = useRef(null)
+
+  const cancelMegaClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current)
+      closeTimer.current = null
+    }
+  }
+  const openMega = () => {
+    cancelMegaClose()
+    setMega(true)
+  }
+  const scheduleMegaClose = () => {
+    cancelMegaClose()
+    closeTimer.current = setTimeout(() => setMega(false), 250)
+  }
+
+  useEffect(() => () => cancelMegaClose(), [])
 
   useMotionValueEvent(scrollY, 'change', (v) => {
     const prev = scrollY.getPrevious() ?? 0
@@ -21,6 +39,7 @@ export default function Navbar() {
   })
 
   useEffect(() => {
+    cancelMegaClose()
     setOpen(false)
     setMega(false)
   }, [location.pathname])
@@ -40,7 +59,7 @@ export default function Navbar() {
           <Link to="/" aria-label="Vynex home">
             <Brand />
           </Link>
-          <nav className="nav-links" onMouseLeave={() => setMega(false)}>
+          <nav className="nav-links" onMouseEnter={cancelMegaClose} onMouseLeave={scheduleMegaClose}>
             {nav.slice(0, 2).map((n) => (
               <NavLink key={n.to} to={n.to} end className="nav-link">
                 {({ isActive }) => (
@@ -51,7 +70,7 @@ export default function Navbar() {
                 )}
               </NavLink>
             ))}
-            <button className={'nav-link' + (mega ? ' active' : '')} onMouseEnter={() => setMega(true)} onClick={() => setMega((m) => !m)}>
+            <button className={'nav-link' + (mega ? ' active' : '')} onMouseEnter={openMega} onClick={() => setMega((m) => !m)}>
               <span>Services ▾</span>
             </button>
             {nav.slice(2).map((n) => (
