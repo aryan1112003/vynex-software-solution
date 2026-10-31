@@ -36,6 +36,7 @@ export default function Footer() {
               </div>
             ))}
             <a href={'mailto:' + contact.email}>{contact.email}</a>
+            <span className="muted small">{contact.office}</span>
           </Reveal>
         </div>
         <motion.div

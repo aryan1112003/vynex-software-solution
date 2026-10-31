@@ -20,6 +20,7 @@ export function Faq({ num, title = 'Questions, *answered.', items }) {
             </a>
           ))}
           <a href={'mailto:' + contact.email}>{contact.email}</a>
+          <span className="muted small">{contact.office}</span>
         </Reveal>
       </div>
       <div className="faq-list">
