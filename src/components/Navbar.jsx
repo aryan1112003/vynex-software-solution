@@ -17,7 +17,7 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, 'change', (v) => {
     const prev = scrollY.getPrevious() ?? 0
     setScrolled(v > 30)
-    setHidden(v > prev && v > 300 && !open)
+    setHidden(v > prev && v > 300 && !open && !mega)
   })
 
   useEffect(() => {

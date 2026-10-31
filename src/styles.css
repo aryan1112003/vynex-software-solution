@@ -446,6 +446,8 @@ button {
   top: calc(100% + 16px);
   right: -120px;
   width: 760px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
