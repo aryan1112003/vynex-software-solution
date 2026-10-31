@@ -41,7 +41,7 @@ export default function Navbar() {
             <Brand />
           </Link>
           <nav className="nav-links" onMouseLeave={() => setMega(false)}>
-            {nav.map((n) => (
+            {nav.slice(0, 2).map((n) => (
               <NavLink key={n.to} to={n.to} end className="nav-link">
                 {({ isActive }) => (
                   <>
@@ -54,6 +54,16 @@ export default function Navbar() {
             <button className={'nav-link' + (mega ? ' active' : '')} onMouseEnter={() => setMega(true)} onClick={() => setMega((m) => !m)}>
               <span>Services ▾</span>
             </button>
+            {nav.slice(2).map((n) => (
+              <NavLink key={n.to} to={n.to} end className="nav-link">
+                {({ isActive }) => (
+                  <>
+                    {isActive && <motion.span layoutId="nav-pill" className="nav-pill" transition={{ type: 'spring', stiffness: 380, damping: 30 }} />}
+                    <span>{n.label}</span>
+                  </>
+                )}
+              </NavLink>
+            ))}
             <AnimatePresence>
               {mega && (
                 <motion.div

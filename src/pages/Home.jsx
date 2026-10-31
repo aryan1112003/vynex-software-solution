@@ -36,7 +36,6 @@ function Hero() {
           <span className="status-pill">
             <span className="live-dot" /> Innovation · Technology · Growth
           </span>
-          <span className="status-text">Ahmedabad, Gujarat — for businesses of all sizes</span>
         </motion.div>
         <h1 className="hero-title" aria-label="We Build Powerful Software Solutions for Your Business">
           <motion.span className="ht-line" {...rise(0.1)}>

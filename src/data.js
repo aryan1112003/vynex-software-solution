@@ -2,8 +2,8 @@ import { asset } from './asset.js'
 export const contact = {
   email: 'info@vynexsoftwaresolution.co.in',
   people: [
-    { name: 'HardikKumar Rathod', phone: '+91 9924365252', tel: '+919924365252' },
     { name: 'Kaushal Mehta', phone: '+91 8200224698', tel: '+918200224698' },
+    { name: 'HardikKumar Rathod', phone: '+91 9924365252', tel: '+919924365252' },
   ],
   office: 'First Floor, Office No. 39, Nakshatra Arcade, IOC Road, Chandkheda, Ahmedabad-382424, Gujarat',
 }
@@ -36,6 +36,35 @@ const marketingSteps = [
 ]
 
 export const services = [
+  {
+    slug: 'erp-consulting',
+    icon: 'Boxes',
+    image: asset('/images/erp-1536.webp'),
+    color: '#f59e0b',
+    title: 'ERP Consulting',
+    short: 'Integrated business operations and ERP aligned with your growth.',
+    eyebrow: 'Connect departments · Simplify operations',
+    lead: 'Bring business processes, departmental data and workflows together. Explore a modular ERP solution aligned with the way your organisation operates.',
+    tagline: 'Connected processes. A clearer view of your organisation.',
+    highlights: [
+      ['Inventory management', 'Connect inventory information.'],
+      ['Sales workflows', 'Keep business activity in view.'],
+      ['Finance & accounting', 'Bring financial data together.'],
+      ['Purchase processes', 'Coordinate purchasing workflows.'],
+      ['Production', 'Connect operations across teams.'],
+      ['Connected departments', 'One integrated business platform.'],
+    ],
+    body: 'We provide ERP consulting services to help businesses streamline their operations and manage resources more effectively. We understand your business processes, identify areas for improvement, and recommend ERP solutions that align with your operational requirements and future growth. Our modular ERP system can be customized to meet your specific business requirements and is designed to grow with your organization.',
+    offers: [
+      ['Business process review', 'Understand your operations and identify areas for improvement.'],
+      ['ERP consulting', 'Recommend solutions aligned with your operational requirements and future growth.'],
+      ['Modular ERP', 'Customize an integrated ERP system to meet your specific business requirements.'],
+      ['Connected departments', 'Bring departmental data and workflows together on one platform.'],
+    ],
+    modules: ['Admin', 'Sales', 'Purchase', 'Inventory', 'Production', 'Finance & Accounting'],
+    tech: ['Python', '.NET C#', 'SQL Server', 'Oracle', 'PostgreSQL', 'Power BI'],
+    steps: buildSteps,
+  },
   {
     slug: 'custom-software',
     icon: 'Code2',
@@ -116,35 +145,6 @@ export const services = [
       ['Secure, responsive apps', 'Create intuitive, secure and responsive applications using modern technologies.'],
     ],
     tech: ['Flutter', 'React Native', 'Jetpack Compose', 'FlutterFlow', 'Ionic', 'Node.js'],
-    steps: buildSteps,
-  },
-  {
-    slug: 'erp-consulting',
-    icon: 'Boxes',
-    image: asset('/images/erp-1536.webp'),
-    color: '#f59e0b',
-    title: 'ERP Consulting',
-    short: 'Integrated business operations and ERP aligned with your growth.',
-    eyebrow: 'Connect departments · Simplify operations',
-    lead: 'Bring business processes, departmental data and workflows together. Explore a modular ERP solution aligned with the way your organisation operates.',
-    tagline: 'Connected processes. A clearer view of your organisation.',
-    highlights: [
-      ['Inventory management', 'Connect inventory information.'],
-      ['Sales workflows', 'Keep business activity in view.'],
-      ['Finance & accounting', 'Bring financial data together.'],
-      ['Purchase processes', 'Coordinate purchasing workflows.'],
-      ['Production', 'Connect operations across teams.'],
-      ['Connected departments', 'One integrated business platform.'],
-    ],
-    body: 'We provide ERP consulting services to help businesses streamline their operations and manage resources more effectively. We understand your business processes, identify areas for improvement, and recommend ERP solutions that align with your operational requirements and future growth. Our modular ERP system can be customized to meet your specific business requirements and is designed to grow with your organization.',
-    offers: [
-      ['Business process review', 'Understand your operations and identify areas for improvement.'],
-      ['ERP consulting', 'Recommend solutions aligned with your operational requirements and future growth.'],
-      ['Modular ERP', 'Customize an integrated ERP system to meet your specific business requirements.'],
-      ['Connected departments', 'Bring departmental data and workflows together on one platform.'],
-    ],
-    modules: ['Admin', 'Sales', 'Purchase', 'Inventory', 'Production', 'Finance & Accounting'],
-    tech: ['Python', '.NET C#', 'SQL Server', 'Oracle', 'PostgreSQL', 'Power BI'],
     steps: buildSteps,
   },
   {

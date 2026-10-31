@@ -14,12 +14,12 @@ export function Faq({ num, title = 'Questions, *answered.', items }) {
       <div className="faq-side">
         <NumHead num={num} eyebrow="FAQ" title={title} text="Can't find what you're looking for? Ask us directly." />
         <Reveal delay={0.2} className="faq-contact">
-          <a href={'mailto:' + contact.email}>{contact.email}</a>
           {contact.people.map((p) => (
             <a key={p.tel} href={'tel:' + p.tel}>
               {p.name} · {p.phone}
             </a>
           ))}
+          <a href={'mailto:' + contact.email}>{contact.email}</a>
         </Reveal>
       </div>
       <div className="faq-list">
