@@ -9,10 +9,7 @@ export default function Footer() {
       <div className="footer-glow" />
       <div className="container">
         <div className="footer-top">
-          <Reveal className="footer-brand">
-            <p className="muted small">{contact.office}</p>
-          </Reveal>
-          <Reveal delay={0.1} className="footer-col">
+          <Reveal className="footer-col">
             <h4>Explore Vynex</h4>
             <Link to="/about">About us</Link>
             <Link to="/technologies">Technologies</Link>

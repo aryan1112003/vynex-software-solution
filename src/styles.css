@@ -1719,7 +1719,7 @@ a:hover .more b,
 .footer-top {
   position: relative;
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 .footer-logo {
