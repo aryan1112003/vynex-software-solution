@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { contact, services } from '../data.js'
 import { Reveal } from './ui.jsx'
 
@@ -36,15 +35,6 @@ export default function Footer() {
             <span className="muted small">{contact.office}</span>
           </Reveal>
         </div>
-        <motion.div
-          className="footer-giant"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          VYNEX
-        </motion.div>
         <div className="footer-bottom">
           <span>© 2026 Vynex Software Solution</span>
           <span>Your Digital Transformation Partner</span>

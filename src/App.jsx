@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
-import Cursor from './components/Cursor.jsx'
 import Loader from './components/Loader.jsx'
 import ScrollProgress from './components/ScrollProgress.jsx'
 import Home from './pages/Home.jsx'
@@ -64,7 +63,6 @@ export default function App() {
   return (
     <>
       <AnimatePresence>{loading && <Loader onDone={() => setLoading(false)} />}</AnimatePresence>
-      <Cursor />
       <ScrollProgress />
       <div className="noise" aria-hidden />
       <Navbar />

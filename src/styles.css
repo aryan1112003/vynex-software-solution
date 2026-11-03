@@ -75,11 +75,6 @@ button {
   background: var(--blue);
   color: #fff;
 }
-.has-cursor,
-.has-cursor * {
-  cursor: none !important;
-}
-
 .container {
   width: min(1240px, 100% - 40px);
   margin-inline: auto;
@@ -300,36 +295,7 @@ button {
   transform: translateX(5px) rotate(-45deg);
 }
 
-/* ---------- cursor / chrome ---------- */
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 50%;
-}
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-  background: var(--blue);
-}
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  margin: -18px 0 0 -18px;
-  border: 1.5px solid rgba(37, 99, 235, 0.45);
-  transition: width 0.3s var(--ease), height 0.3s var(--ease), margin 0.3s var(--ease), background 0.3s, border-color 0.3s;
-}
-.cursor-ring.hover {
-  width: 64px;
-  height: 64px;
-  margin: -32px 0 0 -32px;
-  background: rgba(37, 99, 235, 0.1);
-  border-color: rgba(37, 99, 235, 0.25);
-}
+/* ---------- chrome ---------- */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -889,8 +855,9 @@ a:hover .more b,
   color: #fff;
   border-color: transparent;
 }
-.pill-bg {
+.pill .pill-bg {
   position: absolute;
+  z-index: 0;
   inset: 0;
   border-radius: 99px;
   background: linear-gradient(100deg, #2563eb, #7c3aed);
@@ -1199,6 +1166,12 @@ a:hover .more b,
 }
 .cta .lead {
   margin-inline: auto;
+}
+.cta .lead.wide {
+  max-width: none;
+}
+.nowrap {
+  white-space: nowrap;
 }
 .cta-orb {
   position: absolute;
@@ -1758,23 +1731,9 @@ a:hover .more b,
 .footer-person {
   display: grid;
 }
-.footer-giant {
-  position: relative;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(5rem, 22vw, 20rem);
-  line-height: 0.8;
-  letter-spacing: -0.05em;
-  text-align: center;
-  margin-top: 60px;
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.14), rgba(37, 99, 235, 0));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  user-select: none;
-}
 .footer-bottom {
   position: relative;
+  margin-top: 60px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

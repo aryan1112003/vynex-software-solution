@@ -1452,7 +1452,7 @@ a:hover .around-arrow {
   font-weight: 600;
   color: var(--blue);
 }
-.faq-contact a + a {
+.faq-contact a[href^='mailto:'] {
   color: var(--muted);
   font-weight: 500;
 }

@@ -176,7 +176,7 @@ export function Steps({ steps, title = 'How we work through your idea.', eyebrow
   )
 }
 
-export function CTA({ title = 'Ready to turn your ideas into *reality?', text = 'Let’s explore the right digital solution for your business.', button = 'Start a conversation', to = '/contact' }) {
+export function CTA({ title = 'Ready to turn your ideas into *reality?', text = 'Let’s explore the right digital solution for your business.', button = 'Start a conversation', to = '/contact', wide = false }) {
   return (
     <section className="section container">
       <div className="cta">
@@ -185,7 +185,7 @@ export function CTA({ title = 'Ready to turn your ideas into *reality?', text = 
         <div className="cta-grid" />
         <SplitText text={title} className="h2 cta-title" />
         <Reveal delay={0.2}>
-          <p className="lead">{text}</p>
+          <p className={'lead' + (wide ? ' wide' : '')}>{text}</p>
         </Reveal>
         <Reveal delay={0.35}>
           <Button {...(to.startsWith('/') ? { to } : { href: to })}>{button}</Button>

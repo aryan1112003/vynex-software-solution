@@ -235,7 +235,18 @@ export default function Contact() {
         <AroundSite />
       </section>
 
-      <CTA title={'Prefer to talk?\n*Call us.'} text={contact.people.map((p) => p.name + ' · ' + p.phone).join('   |   ')} button="Email us" to={'mailto:' + contact.email} />
+      <CTA
+        title={'Prefer to talk?\n*Call us.'}
+        text={contact.people.map((p, i) => (
+          <span key={p.tel}>
+            {i > 0 && '   |   '}
+            <span className="nowrap">{p.name + ' · ' + p.phone}</span>
+          </span>
+        ))}
+        button="Email us"
+        to={'mailto:' + contact.email}
+        wide
+      />
     </>
   )
 }
